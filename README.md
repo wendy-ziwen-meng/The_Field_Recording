@@ -1,3 +1,4 @@
+![TD](https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/d58f25c4-7bae-4d99-bdf8-f2ed4a244b58)
 # The Field Recording
 An audio installation that transforms participants' voices into the sounds of humpback whales. 
 A short video of installation experience can be found [here](https://youtu.be/J8NOpTYu4O0). 
