@@ -35,6 +35,14 @@ The whale call audio samples featured in the installation are sourced from the M
 
 # Design and Build
 ## Interface Design
+<p align="center">
+  <img src="https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/e9e5ee50-0041-4248-bef0-d614f8b2d57c" alt="MaxUI" style="width: 45%;"/>
+  <img src="https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/3a879b6b-c12e-41b5-af66-786e35759522" alt="TDUI" style="width: 45%;"/>
+</p>
+On the left-hand side is the MaxMSP interface. At its top, a toggle acts as the primary control for starting and stopping the recording of the whale-like voices crafted by users. Beside this toggle, a dedicated "bang" button provides the functionality to save these unique audio creations under personalized names. Below these controls, a trio of windows offers a detailed view into the audio transformation process: the left window displays the waveform of the user's voice, the right window illustrates the selected whale call sample, and the central window merges these two worlds, showcasing the synthesized audio. This layout is designed for intuitive use.
+
+On the right-hand side, the TouchDesigner interface presents itself, dedicated to visualizing the stylized audio spectrum of the whale sounds generated and saved by the user. In the lower section of this interface, an array of spectrograms is accentuated, each aligning with specific samples activated by the user’s voice. While this demonstration showcases all triggered samples simultaneously for illustrative purposes, the installation itself selectively presents one at any given time. This strategic design choice not only serves an educational function, revealing the vast spectrum of whale sounds, but also aims to enhance participants' comprehension of these intricate marine vocalizations. It’s a considerate arrangement, crafted to not just elevate the user interaction but to foster a deeper appreciation for the rich acoustic diversity beneath the ocean’s surface.
+
 ## Technology Pipeline
 ## MaxMSP
 ## TouchDesigner
