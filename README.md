@@ -49,11 +49,47 @@ On the right-hand side, the TouchDesigner interface presents itself, dedicated t
 
 ![Pipeline](https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/5c6ecca9-66c8-45f1-8051-9fe112e1336b)
 
-The overarching technology pipeline of this project is detailed below. Every three seconds, audio input from the microphone undergoes analysis and comparison against six distinct whale call samples. The sample demonstrating the closest resemblance is then seamlessly integrated with the human voice via a vocoder. This three-second interval was strategically chosen, acknowledging that the duration of the longest whale call is approximately two seconds, thus ensuring each individual call is fully represented in the final composition. Consequently, the output is a harmonious sequence of complete whale calls, forming phrases that serve as the foundational elements of a whale song.
+The overarching technology pipeline of this project is illustrated above. Every three seconds, audio input from the microphone undergoes analysis and comparison against six distinct whale call samples. The sample demonstrating the closest resemblance is then seamlessly integrated with the human voice via a vocoder. This three-second interval was strategically chosen, acknowledging that the duration of the longest whale call is approximately two seconds, thus ensuring each individual call is fully represented in the final composition. Consequently, the output is a harmonious sequence of complete whale calls, forming phrases that serve as the foundational elements of a whale song.
 
 Upon identifying the whale call that most closely matches the human voice, the MaxMSP patch transmits the index of the selected sample (ranging from 0 to 5) to TouchDesigner through OSC protocol. TouchDesigner, in response, highlights the corresponding spectrogram on the display. Following the user's completion and saving of the phrase, TouchDesigner updates its background visual to reflect the audio spectrum of the newly recorded sequence, creating a dynamic and interactive visual experience that complements the auditory creation.
 
 ## MaxMSP
-## TouchDesigner
+Here shows an overview of the main patch. Inside the patch, the sub-patch SampleSelect and vocoder are the key functions.
+<img width="1105" alt="Patch_Overview" src="https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/1befa972-a19e-4663-ae92-85062bf01cfc">
 
-# Conclusions and potential future works 
+Below on the left-hand side is the SampleSelect patch used for comparing the pitch of the microphone input and the samples. The sub-patch, PitchCheck, compares the fundamental frequency of the voice with the sample frequency by taking the absolute difference.
+
+On the right-hand side is the vocoder patch. At its core, the patch utilizes the principle of vocoding, which involves mapping the dynamic volume contours of audio bands from the exciter onto the corresponding bands of the carrier signal. Here, the human voice from the microphone serves as the exciter, injecting speach or singing rhythm into the whale call sample that acts as the carrier. To achieve this, the patch employs two instances of the mc.bands~ abstraction for dissecting both the human voice and the whale soud into separate frequency bands. This separation allows for precise manipulation of each band's volume envelope, captured through squaring and smoothing processes, to mirror the intensity of the voice rhythmic patterns onto the whale call's tonal landscape.
+
+<p align="center">
+  <img src="https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/228daa61-150d-40cf-81b4-87a9f8ef07a2" alt="pSampleSelect" style="width: 45%;"/>
+  <img src="https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/d8d493cb-19f1-4d63-af50-8faaf4b9c3c2" alt="pVocoder" style="width: 45%;"/>
+</p>
+
+
+## TouchDesigner
+The overview provided here offers a glimpse into the TouchDesigner project, a platform that, akin to Max, utilizes a node-based programming approach. The final visual of the installation emerges from a meticulous process of iterating through various visualization techniques and fine-tuning parameters to achieve the desired outcome. Below is the finalized structure, showcasing the culmination of this creative exploration.
+![TDOverview](https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/22f2a696-31f8-4d68-9ead-f8e60612c508)
+
+The project uses two key elements to create an ocean-like atmosphere. The first involves using noise, blur, and displace effects to create visuals that resemble bubbles, capturing the feeling of sunlight filtering through ocean water. The second uses a ramp to adjust the color of the spectrogram, giving it a peaceful blue color that reflects the ocean's depth. In addition, a select function is used to highlight different whale call spectrograms, dynamically selecting the right sample based on the osc protocol. This careful use of visual effects and color themes enhances the overall experience, immersing users further into the marine environment that the project aims to replicate.
+![TDramp](https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/9968e9e4-dc03-4953-8f6d-aa8e19b3c070)
+![TDRandom](https://github.com/wendy-ziwen-meng/The_Field_Recording/assets/84087309/77ec1291-cf97-4dc8-9fd1-6db7caa4f1e4)
+
+
+# Conclusions
+The event was an excellent opportunity for people to learn more about these remarkable creatures while enjoying an interactive experience. The feedback from the installation day was predominantly positive, with attendees praising both the beauty of the concept and its educational value. Despite the positive feedback, there are a few areas we could look into for future improvements. While many attendees enjoyed vocalizing and interacting with the installation, some seemed to prefer speaking random sentences over singing. This could suggest a slight unease about performing musical elements in public - a small issue, but one that could enhance future experiences if addressed.
+
+# Potential future works 
+Based on observations and participant feedback, several opportunities for future enhancements have been identified:
+
+* Guidance for Vocalization: To encourage more musical interaction, introducing guided activities, such as reading a poem or singing a well-known song, could make participants feel more comfortable and engaged. This would not only enhance the user experience but also potentially create a richer variety of sounds for the installation.
+
+* Improved Pitch Mapping: The challenge of triggering specific whale samples due to background noise and the inherent spectral differences between human and whale vocalizations suggests a need for refined pitch mapping. Future iterations could explore linear or nonlinear mapping strategies to more accurately mirror the range and nuance of whale vocalizations. Adjusting the sensitivity for triggering higher-pitched whale sounds was a start, but a more sophisticated approach could offer a truer representation of the natural interactions between different pitches.
+
+* Enriching the Dataset: Expanding the library of whale call samples would add depth and variety to the project, making the acoustic environment even more vibrant and authentic. This would also allow for a more complex and nuanced exploration of the marine soundscape.
+
+* Smoothing Transitions: To further mimic the natural flow of whale songs, future work could focus on smoothing the transitions between calls. This adjustment aims to create a more seamless and song-like auditory experience, enhancing the illusion of diving into the ocean's acoustic layers.
+
+* Inclusion of Other Species: Broadening the scope to include sounds from other marine species would enrich the project's educational value and immersive quality. Integrating calls from a wider range of ocean inhabitants could offer a more comprehensive view of the marine ecosystem's acoustic diversity.
+
+These potential enhancements are driven by a desire not only to refine the technical aspects of the installation but also to deepen the emotional and educational impact on participants. By addressing these areas, the project can evolve into an even more engaging and enlightening experience, fostering a greater appreciation for the complexity and beauty of marine life's acoustic landscapes.
