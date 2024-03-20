@@ -27,7 +27,7 @@ The cornerstone of the installation leverages this fascinating discovery, activa
 To learn more about the history of whale song discovery, and the song structure, check:
 * https://medium.com/@dealville/whales-synchronize-their-songs-across-oceans-and-theres-sheet-music-to-prove-it-b1667f603844
 * https://whaletrust.org/song-structure-composition/
-[Pattern Radio](https://medium.com/@alexanderchen/pattern-radio-whale-songs-242c692fff60) is also an inspiring project that worth checking, it utilizes AI to let people explore thousands of hours of whale songs.
+* [Pattern Radio](https://medium.com/@alexanderchen/pattern-radio-whale-songs-242c692fff60) is also an inspiring project that worth checking, it utilizes AI to let people explore thousands of hours of whale songs.
 
 ## Whale Calls Sample
 
