@@ -35,5 +35,8 @@ The whale call audio samples featured in the installation are sourced from the M
 
 # Design and Build
 ## Interface Design
-
 ## Technology Pipeline
+## MaxMSP
+## TouchDesigner
+
+# Conclusions and potential future works 
